@@ -1,0 +1,274 @@
+/* 调整三栏布局比例为 1:4:1 */
+
+/* 左侧导航栏宽度 */
+.md-sidebar--primary {
+    width: 16rem;  /* 约 256px，占 1/6 */
+}
+
+/* 右侧目录栏宽度 */
+.md-sidebar--secondary {
+    width: 16rem;  /* 约 256px，占 1/6 */
+}
+
+/* 中间内容区域 */
+.md-content {
+    max-width: 64rem;  /* 约 1024px，占 4/6 */
+    margin: 0 auto;
+}
+
+/* 调整整体布局容器宽度 */
+.md-grid {
+    max-width: 96rem;  /* 16+64+16 = 96rem，约 1536px */
+    margin: 0 auto;
+}
+
+/* 在小屏幕上自动调整（保持响应式） */
+@media screen and (max-width: 76.1875em) {
+    .md-sidebar--primary {
+        width: auto;
+    }
+    .md-sidebar--secondary {
+        width: auto;
+    }
+    .md-content {
+        max-width: 100%;
+    }
+}
+
+
+/* 左右对照容器 */
+.comparison-container {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 左栏样式 */
+.left-column {
+    flex: 1 1 45%;
+    min-width: 320px;
+    background-color: #f9fafc;
+    padding: 28px 30px;
+    border-radius: 20px;
+    border-left: 6px solid #b91c1c;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+/* 右栏样式 */
+.right-column {
+    flex: 1 1 45%;
+    min-width: 320px;
+    background-color: #ffffff;
+    padding: 28px 30px;
+    border-radius: 20px;
+    border-left: 6px solid #0f6e3f;
+    box-shadow: 0 8px 25px rgba(0,40,20,0.06);
+}
+
+/* ============================================
+   左右对照容器样式 - 确保 Markdown 格式正常显示
+   ============================================ */
+
+/* 左栏和右栏的通用样式 */
+.left-column, 
+.right-column {
+    /* 确保子元素继承正确的字体样式 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+/* 确保粗体（<strong> 和 <b>）正确显示 */
+.left-column strong,
+.right-column strong,
+.left-column b,
+.right-column b {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* 确保斜体（<em> 和 <i>）正确显示 */
+.left-column em,
+.right-column em,
+.left-column i,
+.right-column i {
+    font-style: italic;
+}
+
+/* 确保内联代码（<code>）样式 */
+.left-column code,
+.right-column code {
+    background-color: #f1f3f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+    font-size: 0.9em;
+    color: #d14;
+}
+
+/* 确保标题样式（h3, h4 等）正确 */
+.left-column h3,
+.right-column h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+    color: #0f2b4b;
+}
+
+.left-column h4,
+.right-column h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.75rem 0;
+    color: #1e3a5f;
+}
+
+/* 确保列表（ul, ol）样式 */
+.left-column ul,
+.right-column ul,
+.left-column ol,
+.right-column ol {
+    margin: 0.75rem 0 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.left-column li,
+.right-column li {
+    margin-bottom: 0.25rem;
+}
+
+/* 确保无序列表的项目符号 */
+.left-column ul,
+.right-column ul {
+    list-style-type: disc;
+}
+
+.left-column ul ul,
+.right-column ul ul {
+    list-style-type: circle;
+}
+
+/* 确保有序列表的数字 */
+.left-column ol,
+.right-column ol {
+    list-style-type: decimal;
+}
+
+/* 确保段落间距 */
+.left-column p,
+.right-column p {
+    margin: 0 0 0.75rem 0;
+}
+
+/* 确保水平线样式 */
+.left-column hr,
+.right-column hr {
+    margin: 1.5rem 0;
+    border: none;
+    border-top: 1px solid #dee2e6;
+}
+
+/* 确保引用块样式 */
+.left-column blockquote,
+.right-column blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #b91c1c;
+    background-color: #fef2f2;
+    color: #4a5568;
+}
+
+/* 确保链接样式 */
+.left-column a,
+.right-column a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.left-column a:hover,
+.right-column a:hover {
+    text-decoration: underline;
+}
+
+/* 确保表格在左右栏内样式统一（虽然你已经用内联样式，但可确保一致性） */
+.left-column table,
+.right-column table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.left-column th,
+.right-column th,
+.left-column td,
+.right-column td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+
+.left-column th,
+.right-column th {
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+
+/* 确保代码块样式（如果有三个反引号的代码块） */
+.left-column pre,
+.right-column pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+}
+
+.left-column pre code,
+.right-column pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* 确保任务列表样式（如果使用 - [ ] 语法） */
+.left-column .task-list-item,
+.right-column .task-list-item {
+    list-style-type: none;
+}
+
+.left-column .task-list-item-checkbox,
+.right-column .task-list-item-checkbox {
+    margin-right: 0.5rem;
+}
+
+/* 确保图片自适应 */
+.left-column img,
+.right-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 确保响应式：小屏幕时适当调整字体大小 */
+@media (max-width: 768px) {
+    .left-column,
+    .right-column {
+        font-size: 14px;
+    }
+    
+    .left-column h3,
+    .right-column h3 {
+        font-size: 1.3rem;
+    }
+    
+    .left-column h4,
+    .right-column h4 {
+        font-size: 1.1rem;
+    }
+}

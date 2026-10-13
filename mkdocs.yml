@@ -1,3 +1,43 @@
-site_name: My Docs
+site_name: My online portfolio
 theme:
   name: material
+  icon:
+    logo: material/github
+  language: zh
+  features:
+    - navigation.top
+   #  - navigation.tabs
+   # - navigation.sections      # 添加：左侧导航分组
+   # - navigation.expand        # 添加：自动展开左侧导航
+  palette:
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+copyright: Copyright © 2026 Arina-Xie All Rights Reserved
+
+# 添加自定义 CSS
+extra_css:
+  - stylesheets/extra.css
+ 
+
+nav:
+
+- 作品合集:
+  - 作品1-文档翻译1-RDS-readonly-instance:
+      首页文章/作品1-文档翻译1-RDS-readonly-instance.md
+  - 作品1-文档翻译2-Refund-API:
+      首页文章/作品1-文档翻译2-Refund-API.md
+  - 作品2-Notion 入门指南:
+      首页文章/作品2-Notion 入门指南.md
+  - 作品3-README 优化报告:
+      首页文章/作品3-README 优化报告.md
+  - 作品4-企连API v2.0开发指南:
+      首页文章/作品4-Qilian_API_v2_guide.pdf
